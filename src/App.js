@@ -53,20 +53,23 @@ class App extends Component {
     this.setState({ list: task });
   }
 
-  render() {
+  render()
+ {
+  const{variant,alert,idx, show,list, taskselect }=this.state;
+
     return (
       <div className="App">
         <header className="App-header">
-  <h1>Todo List</h1>
+        <h1>Todo List</h1>
 
 
           <Alert
-            hidden={this.state.alert}
+            hidden={alert}
             style={{ width: "18rem" }}
             key={this.state.idx}
-            variant={this.state.variant}
+            variant={variant}
           >
-            {this.state.idx}
+            {idx}
           </Alert>
           <InputGroup className="mb-3" style={{ width: "18rem" }}>
             <InputGroup.Text>Number of Tasks</InputGroup.Text>
@@ -81,7 +84,7 @@ class App extends Component {
           </InputGroup>
           <div style={{maxWidth:1200}} class="container-fluid">
               <div class="row" >
-          {this.state.list.map((task) => (
+          {list.map((task) => (
            
                 <Card style={{ minWidth: "18rem", minHeight:"7rem" }} className="col-lg-4 col-md-6 col-sm-12">
                   <Card.Body>
@@ -104,7 +107,7 @@ class App extends Component {
              </div>
         </header>
         <Modal
-          show={this.state.show}
+          show={show}
           onHide={() => {
             this.handleClose();
           }}
@@ -113,8 +116,8 @@ class App extends Component {
             <Modal.Title>Detail</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Titulo: {this.state.taskselect.title}</p>
-            <p>ID: {this.state.taskselect.id}</p>
+            <p>Titulo: {taskselect.title}</p>
+            <p>ID: {taskselect.id}</p>
           </Modal.Body>
           <Modal.Footer>
             <Button
@@ -128,7 +131,7 @@ class App extends Component {
             <Button
               variant="primary"
               onClick={() => {
-                this.completeTask(this.state.taskselect);
+                this.completeTask(taskselect);
               }}
             >
               Complete task

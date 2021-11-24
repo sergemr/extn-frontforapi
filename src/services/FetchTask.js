@@ -36,7 +36,7 @@ const exportedObject = {
     var raw = JSON.stringify(task);
     
     var requestOptions = {
-      method: 'POST',
+      method: 'PUT',
       headers: myHeaders,
       body: raw,
       redirect: 'follow'
