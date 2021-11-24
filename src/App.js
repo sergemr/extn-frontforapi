@@ -34,17 +34,14 @@ class App extends Component {
     this.setState({ show: false });
   }
   handleShow(task) {
-    this.setState({ show: true });
-    this.setState({ taskselect: task.task });
+    this.setState({ show: true, taskselect: task.task });
   }
 
   async completeTask(task) {
     let res = await ajaxTask.putTasks(task);
     if (typeof res.value != "undefined") {
-      this.setState({ show: false });
-      this.setState({ variant: "primary" });
-      this.setState({ idx: res.value });
-      this.setState({ alert: false });
+      this.setState({ show: false, alert: false, variant: "primary",idx: res.value });
+      
       setTimeout(() => {
         this.setState({ alert: true });
       }, 3000);
