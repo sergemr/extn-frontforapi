@@ -28,6 +28,23 @@
   color: #61dafb;
 }
 
+.Card-title
+{
+  color: #282c34;
+}
+
+.Card-button
+{
+  width: 100%;
+}
+
+.Size-alert
+{
+  width: 50%!important;
+  text-align: center;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
