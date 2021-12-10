@@ -26,15 +26,13 @@ const Home: React.FC = () => {
   const [taskNumber, setTaskNumber] = React.useState(3);
 
   const [openModal, setOpenModal] = React.useState(false);
-  const [open, setOpen] = React.useState(true);
+   
   const [task, setTask] = React.useState<any>(); 
 
-  const handleClickOpen = () => {
-      setOpen(true);
-  };
+ 
 
   const handleClose = () => {
-    setOpen(false);
+ 
     setOpenModal(false);
   };
 

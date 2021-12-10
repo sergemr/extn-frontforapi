@@ -72,7 +72,7 @@ const Modal: React.FC<ModalProps> = (props) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleComplete}>Mark Completed</Button>
-          <Button onClick={handleClose}>Agree</Button>
+          <Button onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
