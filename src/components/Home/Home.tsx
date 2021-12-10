@@ -46,7 +46,7 @@ const Home: React.FC = () => {
   };
   const updateData = async (task :any) => {
     console.log("updateData",task);
-    let res = await putTasks(task);
+    await putTasks(task);
     
   };
   useEffect(() => {
