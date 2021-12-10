@@ -107,6 +107,8 @@ const Home: React.FC = () => {
                       
                       <Button size="small" onClick={e=>getModal(task) }>Learn More</Button>
                     </CardActions>
+                    <br/>          <br/>
+                    {`${index+1} / ${taskNumber}`}
                   </Card>
                   </Item>
                 </Grid>
