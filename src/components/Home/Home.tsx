@@ -65,8 +65,13 @@ const Home: React.FC = () => {
     <div className={styles.Home} data-testid="Home">
   
       { openModal && <Modal actionFn={updateData} handleCloseFn={handleClose} task={task} title="TestTitle"/>}
- 
+      <Card style={{ maxWidth: 1200, margin: "auto" }} >
       <h1>Tasks Exercise</h1>
+      <p>Front End Exercise for&nbsp;
+       <a target={"_blank;"} href="https://github.com/sergemr/extn-expressjsapi">my ExpressJS RestFull Api</a> in Github</p>
+       <p>Source code&nbsp;
+       <a target={"_blank;"} href="https://github.com/sergemr/extn-frontforapi">here</a> </p>
+      <h2>Displaying {taskNumber} task{`${taskNumber > 1 ?"s":""}`}</h2>
       <TextField
         id="outlined-basic"
         defaultValue={taskNumber}
@@ -81,7 +86,7 @@ const Home: React.FC = () => {
             tasks.map((task: any, index) => {
               return (
                 <Grid key={index} item xs={12} md={4} lg={4}>
-                  <Item></Item>
+                  <Item>
                   <Card sx={{  height:375 }}>
                     <CardMedia
                       component="img"
@@ -103,11 +108,13 @@ const Home: React.FC = () => {
                       <Button size="small" onClick={e=>getModal(task) }>Learn More</Button>
                     </CardActions>
                   </Card>
+                  </Item>
                 </Grid>
               );
             })}
         </Grid>
       </Box>
+      </Card>
     </div>
   );
 };
