@@ -2,34 +2,23 @@
 
 const URI = 'http://127.0.0.1:3001';
 
-const exportedObject = {
-  async fetchTasks(number = 3) {
-    let r = URI + '/tasks?number='+number;
-    let responseJson= await fetch(r, 
-      {
-        method: 'GET',
-        headers: 
-        {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-    })
-    .then((response) => response.json())
-      //If response is in json then in success
-    .then((responseJson) => {
-      //Success 
-      return  responseJson;
-    })
-      //If response is not in json then in error
-    .catch((error) => {
-      //Error 
-      console.error(error);
-    });
-    return responseJson;
-  },
 
-  async putTasks(task) {
+  export const  fetchTasks=async(number = 3 )=> {
+    const axios = require('axios');
+      // Make a request for a user with a given ID
+    //tmpResult = await  axios.get(`${URI}/tasks`)    
+     
+    const data = await axios.get(`${URI}/tasks?number=${number}`)
+    .then((response) =>{ return response.data}).catch((error) => {   console.log(error)})
+
+    console.log(data)
+
+    return data;
+ 
+  }
+
+  export const  putTasks=async(task)=> {
+    console.log(task)
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     
@@ -55,6 +44,7 @@ const exportedObject = {
       console.error(error);
     });
     return responseJson;
-  }
-};
-export default exportedObject;
+  } 
+
+
+  
