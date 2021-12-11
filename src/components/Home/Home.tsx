@@ -66,7 +66,7 @@ const Home: React.FC = () => {
   
       { openModal && <Modal actionFn={updateData} handleCloseFn={handleClose} task={task} title="TestTitle"/>}
       <Card style={{ maxWidth: 1200, margin: "auto" }} >
-      <h1>Tasks Exercise</h1>
+      <h1>Tasks Excercise</h1>
       <p>Front End Exercise for&nbsp;
        <a target={"_blank;"} href="https://github.com/sergemr/extn-expressjsapi">my ExpressJS RestFull Api</a> in Github</p>
        <p>Source code&nbsp;
